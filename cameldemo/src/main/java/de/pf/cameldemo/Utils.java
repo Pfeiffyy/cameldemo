@@ -1,5 +1,6 @@
 package de.pf.cameldemo;
 
+import org.apache.camel.AggregationStrategy;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.script.ScriptBuilder;
 
@@ -19,4 +20,13 @@ public class Utils {
 			throw new RuntimeException(e);
 		}
 	}
+	/**
+	 * Creates a strategy, which sets the additional body as a header on the original exchange.
+	 */
+	public static AggregationStrategy headerEnricherStrategy(String headerName) {
+		return (original, newExchange) -> {
+			original.getIn().setHeader(headerName, newExchange.getIn().getBody());
+			return original;
+		};
+	}	
 }

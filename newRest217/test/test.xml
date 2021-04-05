@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xls:Response xmlns:xls="http://abc.de/x/y/z">
+	<xls:GeocodeAdress>
+		<gml:Point xmlns:gml="http://abc.de/x/y/z">
+			<gml:pos srsName="EPSG:4326">7.1006599 50.7358511</gml:pos>
+		</gml:Point>
+	</xls:GeocodeAdress>
+</xls:Response>
