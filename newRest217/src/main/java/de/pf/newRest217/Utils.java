@@ -27,6 +27,11 @@ public class Utils {
 	 */
 	public static AggregationStrategy headerEnricherStrategy(String headerName) {
 		return (original, newExchange) -> {
+			System.out.println("***************************************************************");
+			System.out.println(headerName);
+			System.out.println(original);
+			System.out.println(newExchange.getIn().getBody());
+			System.out.println("***************************************************************");
 			original.getIn().setHeader(headerName, newExchange.getIn().getBody());
 			return original;
 		};
